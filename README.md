@@ -25,6 +25,20 @@ mkdir -p ~/.claude/skills
 cp -r skills/code-explainer ~/.claude/skills/
 ```
 
+Or install as a Claude Code plugin:
+
+```text
+/plugin marketplace add https://github.com/liujieranjerry-lgtm/code-explainer
+/plugin install code-explainer@code-explainer
+```
+
+### Install into Codex as a plugin
+
+```bash
+codex plugin marketplace add liujieranjerry-lgtm/code-explainer
+codex plugin add code-explainer@code-explainer
+```
+
 ### Install with the open skills CLI
 
 ```bash

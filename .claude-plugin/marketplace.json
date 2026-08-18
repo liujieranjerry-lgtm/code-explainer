@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "code-explainer",
+  "description": "Production-grade Agent Skill that explains code in plain, logical language for smart beginners.",
+  "owner": {
+    "name": "liujieranjerry-lgtm",
+    "url": "https://github.com/liujieranjerry-lgtm"
+  },
+  "plugins": [
+    {
+      "name": "code-explainer",
+      "version": "1.0.0",
+      "source": {
+        "source": "github",
+        "repo": "liujieranjerry-lgtm/code-explainer"
+      },
+      "description": "Explains code in one logical narrative, keeps exact identifiers visible, and supports word-by-word mode for beginners.",
+      "homepage": "https://github.com/liujieranjerry-lgtm/code-explainer",
+      "license": "MIT",
+      "keywords": ["skill", "code-explanation", "education", "beginner", "chinese"]
+    }
+  ]
+}

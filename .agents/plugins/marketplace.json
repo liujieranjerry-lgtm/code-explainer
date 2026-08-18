@@ -1,0 +1,22 @@
+{
+  "name": "code-explainer",
+  "interface": {
+    "displayName": "Code Explainer"
+  },
+  "plugins": [
+    {
+      "name": "code-explainer",
+      "version": "1.0.0",
+      "description": "Explains code in plain, logical Chinese for smart learners without a programming background.",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "NONE"
+      },
+      "category": "Education"
+    }
+  ]
+}
