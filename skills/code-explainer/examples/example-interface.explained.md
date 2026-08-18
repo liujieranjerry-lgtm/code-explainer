@@ -1,0 +1,3 @@
+# Example: Interface Explanation
+
+`LlmClient` is a contract for the model-calling layer. It states that any model client must provide `complete(request: LlmRequest)`, which receives a unified request and returns a `Promise<AssistantMessage>`; that means "the final standard answer will arrive later." `StreamingLlmClient extends LlmClient` means it inherits the non-streaming `complete` method and adds `stream(request: LlmRequest): AsyncIterable<LlmStreamEvent>`, so the Agent can receive one event at a time while the model generates. The Agent Loop depends only on these two unified methods, not on provider-specific formats.

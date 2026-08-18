@@ -1,0 +1,7 @@
+interface:
+  display_name: "代码通俗解读"
+  short_description: "用连贯的通俗段落解释代码，面向聪明但没有编程基础的学习者"
+  default_prompt: "Use $code-explainer to explain this code in plain language for a beginner."
+
+policy:
+  allow_implicit_invocation: true

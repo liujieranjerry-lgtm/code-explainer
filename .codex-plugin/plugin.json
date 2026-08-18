@@ -1,0 +1,26 @@
+{
+  "name": "code-explainer",
+  "version": "1.0.0",
+  "description": "Explains code in plain, logical Chinese for smart learners without a programming background.",
+  "author": {
+    "name": "liujieranjerry-lgtm"
+  },
+  "homepage": "https://github.com/liujieranjerry-lgtm/code-explainer",
+  "repository": "https://github.com/liujieranjerry-lgtm/code-explainer",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Code Explainer",
+    "shortDescription": "Plain-language code explanations for beginners",
+    "longDescription": "A production-grade Agent Skill that explains code in one logical narrative, keeps exact identifiers visible, and supports word-by-word mode.",
+    "developerName": "liujieranjerry-lgtm",
+    "category": "Education",
+    "capabilities": [
+      "Read"
+    ],
+    "defaultPrompt": [
+      "Use code-explainer to explain this code in plain language.",
+      "解读这段代码"
+    ]
+  }
+}

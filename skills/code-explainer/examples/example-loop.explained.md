@@ -1,0 +1,3 @@
+# Example: Loop Explanation
+
+The loop starts at `turn = 1` and continues until it reaches `maxTurns`. Each iteration calls `completeAssistant` to let the model think once, passing the current history through `[...this.messages]` and the tool descriptions through `this.tools.toLlmToolSpecs()`. After the model answers, the program appends the answer to `this.messages`. If `assistant.toolCalls.length === 0`, the model has given a final answer, so the program calls `buildResult(assistant.content, turn, "final")` and stops. If tools were requested, the loop continues after executing them, letting the model see the results.
