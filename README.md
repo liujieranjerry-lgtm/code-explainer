@@ -5,102 +5,103 @@
 [![Frontmatter validated](https://img.shields.io/badge/frontmatter-validated-success.svg)](scripts/validate_skills.py)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-**Code Explainer** is a production-grade Agent Skill that teaches AI agents how to explain code to smart learners with no programming background. It turns code into one logical, readable narrative, keeps exact code identifiers visible, and uses plain analogies without losing technical precision.
+**Code Explainer** 是一个生产级的 Agent Skill，专门教 AI Agent 如何给“聪明但没有编程基础”的学习者解释代码。它把代码讲成一段有逻辑、连贯的叙述，保留准确的代码标识符，同时用通俗类比降低理解门槛。
 
-The skill is written for Chinese-speaking learners by default, but the method is language-neutral and can be applied to any codebase.
+这个 Skill 默认面向中文学习者，但它的方法论是通用的，可以应用于任何代码。
 
-## Quick Start
+## 快速开始
 
-### Install into Codex
+### 安装到 Codex
 
 ```bash
 mkdir -p ~/.codex/skills
 cp -r skills/code-explainer ~/.codex/skills/
 ```
 
-### Install into Claude Code
+### 安装到 Claude Code
 
 ```bash
 mkdir -p ~/.claude/skills
 cp -r skills/code-explainer ~/.claude/skills/
 ```
 
-Or install as a Claude Code plugin:
+### 作为 Claude Code 插件安装
 
 ```text
 /plugin marketplace add https://github.com/liujieranjerry-lgtm/code-explainer
 /plugin install code-explainer@code-explainer
 ```
 
-### Install into Codex as a plugin
+### 作为 Codex 插件安装
 
 ```bash
 codex plugin marketplace add liujieranjerry-lgtm/code-explainer
 codex plugin add code-explainer@code-explainer
 ```
 
-### Install with the open skills CLI
+### 使用 skills CLI 安装
 
 ```bash
 npx skills add liujieranjerry-lgtm/code-explainer --skill code-explainer
 ```
 
-After installation, the skill triggers automatically when a user says things like:
+安装后，当用户说出以下类似的话时，Skill 会自动触发：
 
-- "解读代码"
-- "解释代码"
-- "分析代码"
-- "explain this code"
-- "walk me through this code"
-- "解释每个具体代码词"
+- “解读代码”
+- “解释代码”
+- “分析代码”
+- “这段代码是什么意思”
+- “explain this code”
+- “walk me through this code”
+- “解释每个具体代码词”
 
-## What This Skill Does
+## 这个 Skill 做什么
 
-- Explains code in a coherent narrative, not a glossary dump.
-- Weaves exact code identifiers into the explanation.
-- Covers what the code is for, how it runs, and why it matters.
-- Supports word-by-word mode when the user asks for it.
-- Keeps the tone warm and accessible without being condescending.
+- 用连贯的叙述解释代码，而不是堆术语。
+- 把准确的代码标识符保留在解释里。
+- 说明代码是干什么的、怎么运行的、为什么重要。
+- 支持“逐词解释”模式，方便用户逐个理解代码词。
+- 保持亲切、清晰、有逻辑的语气，不居高临下。
 
-## Skill Anatomy
+## Skill 目录结构
 
 ```
 skills/code-explainer/
-├── SKILL.md                    # Required entry point
-├── agents/openai.yaml          # Codex UI metadata
-├── references/method.md        # Deep method, term mappings, worked examples
-├── examples/                   # Input code + expected explanation style
+├── SKILL.md                    # 必需入口文件
+├── agents/openai.yaml          # Codex UI 元数据
+├── references/method.md        # 详细方法、术语映射、示例
+├── examples/                   # 输入代码 + 期望的解释风格
 └── ...
 ```
 
-See [docs/skill-anatomy.md](docs/skill-anatomy.md) for the full authoring standard used by this repository.
+完整规范见 [docs/skill-anatomy.md](docs/skill-anatomy.md)。
 
-## Quality and Validation
+## 质量与校验
 
-The repository ships a zero-dependency validator:
+仓库自带零依赖校验脚本：
 
 ```bash
 python3 scripts/validate_skills.py
 ```
 
-It checks:
+它会检查：
 
-- `name` is hyphen-case, <= 64 characters, and matches the folder name.
-- `description` is non-empty, <= 1024 characters, and contains trigger keywords.
-- `SKILL.md` exists in every skill folder.
-- The body stays under 500 lines (warning only).
+- `name` 是否为小写连字符格式，不超过 64 个字符，且与目录名一致。
+- `description` 是否非空、不超过 1024 个字符，并包含触发关键词。
+- 每个 Skill 目录是否存在 `SKILL.md`。
+- `SKILL.md` 正文是否控制在 500 行以内（超出仅警告）。
 
-Run the tests:
+运行测试：
 
 ```bash
 python3 -m unittest discover -s tests -p "test_*.py"
 ```
 
-GitHub Actions runs both commands on every push and pull request.
+GitHub Actions 会在每次 push 和 pull request 时自动运行这两条命令。
 
-## Contributing
+## 贡献
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+参见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## License
 
